@@ -1,25 +1,22 @@
-
 #include <iostream>
 #include <queue>
-using namespace std;
 
 int main() {
-    queue<int> tokens;
-    int token;
+   std::queue<int> tokenQueue;
 
-    cout << "Enter 5 customer token numbers:\n";
+    tokenQueue.push(191);
+    tokenQueue.push(182);
+    tokenQueue.push(173);
+    tokenQueue.push(164);
+    tokenQueue.push(155);
 
-    for (int i = 0; i < 5; i++) {
-        cin >> token;
-        tokens.push(token);
+    std::cout << "Serving Customers (Queue - FIFO):\n";
+
+    while(!tokenQueue.empty()) {
+
+        std::cout << "Serving Customer with Order Number:" << tokenQueue.front() << "\n";
+        tokenQueue.pop();
+        //code ends here    
     }
-
-    cout << "\nServing Customers:\n";
-
-    while (!tokens.empty()) {
-        cout << "Serving Token: " << tokens.front() << endl;
-        tokens.pop();
-    }
-//code ends here
     return 0;
 }
